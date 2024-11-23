@@ -27,8 +27,38 @@ function createWindow() {
 
   win.loadFile("index.html");
 
-  // Verificar por atualizações
+  // Inicializar o autoUpdater
   autoUpdater.checkForUpdatesAndNotify();
+
+  // Listeners do autoUpdater
+  autoUpdater.on("update-available", () => {
+    dialog.showMessageBox(mainWindow, {
+      type: "info",
+      title: "Atualização disponível",
+      message:
+        "Uma nova versão está disponível. O download será iniciado em breve.",
+    });
+  });
+
+  autoUpdater.on("update-downloaded", () => {
+    dialog
+      .showMessageBox(mainWindow, {
+        type: "question",
+        title: "Atualização pronta",
+        message:
+          "Uma nova versão foi baixada. Deseja reiniciar o aplicativo para instalar?",
+        buttons: ["Sim", "Agora não"],
+      })
+      .then((result) => {
+        if (result.response === 0) {
+          autoUpdater.quitAndInstall();
+        }
+      });
+  });
+
+  autoUpdater.on("error", (error) => {
+    console.error("Erro durante a atualização:", error);
+  });
 
   ipcMain.on("minimize", (event, data) => {
     win.minimize();
@@ -38,25 +68,13 @@ function createWindow() {
   });
   ipcMain.on("chatgpt", async (event, data) => {
     await init_puppeteerChatGPT();
-    console.log("atualização");
+    console.log("atualização2");
   });
   ipcMain.on("leonardoia", async (event, data) => {
     // await init_puppeteerLeonardoIA();
   });
-
-  ipcMain.on("restart_app", () => {
-    autoUpdater.quitAndInstall();
-  });
 }
 
-// Eventos de autoUpdater
-autoUpdater.on("update-available", () => {
-  mainWindow.webContents.send("update_available");
-});
-
-autoUpdater.on("update-downloaded", () => {
-  mainWindow.webContents.send("update_downloaded");
-});
 app.whenReady().then(createWindow);
 
 app.on("window-all-closed", () => {
