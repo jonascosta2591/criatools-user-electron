@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>Criatools</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body>
+    <form id="login">
+      <span class="loader" id="loaderspinner"></span>
+      <div class="container-login-login">
+        <img src="img/logo_completa.png" alt="" />
+        <input type="text" id="email" placeholder="email" />
+        <input type="password" id="password" placeholder="senha" />
+        <p><a href="#">Redefina sua senha</a></p>
+        <button class="btn-login">Login</button>
+        <a href="#" id="btn-cadastrar">Cadastre-se</a>
+        <div class="errormsg"></div>
+      </div>
+    </form>
+    <div class="container-login"></div>
+    <div class="buttonsActions">
+      <img src="img/logo_white.png" alt="" srcset="" />
+      <div class="btns">
+        <button class="action" id="minimize-btn">
+          <img src="img/minimize.svg" alt="minimize" />
+        </button>
+        <button class="action" id="close-btn">
+          <img src="img/close.svg" alt="minimize" />
+        </button>
+      </div>
+    </div>
+    <div class="container_welcome">
+      <span>Bem-vindo,&nbsp;<span id="username"></span></span>
+    </div>
+    <div class="content-inteligencias-artificiais">
+      <span>Inteligências artificiais</span>
+    </div>
+
+    <div class="container_buttons">
+      <button id="chatgpt">
+        <img src="img/ChatGPT_logo 1.png" alt="" />ChatGPT
+      </button>
+      <button id="leonardoIA">
+        <img src="img/leaonardo-logo 1.png" alt="" />Leonardo IA
+      </button>
+      <button><img src="img/Midjourney_.png" alt="" />Midjourney</button>
+      <button><img src="img/ideogram.png" alt="" />Ideogram AI</button>
+      <button><img src="img/logoeleven.png" alt="" />ElevenLabs</button>
+      <button><img src="img/pika.png" alt="" />Pika AI</button>
+      <button><img src="img/Vectorizer.png" alt="" />Vectorizer</button>
+      <button><img src="img/remini.png" alt="" />Remini</button>
+      <button><img src="img/pixelcut.png" alt="" />Pixel cut</button>
+    </div>
+    <!-- <div class="content-inteligencias-artificiais">
+      <span>Plataformas bonus</span>
+    </div>
+    <div class="container_buttons">
+      <button><img src="img/freepik.png" alt="">Freepik</button>
+      <button><img src="img/flaticon.png" alt="">Flaticon</button>
+      <button><img src="img/evanto.png" alt="">Envato</button>
+      <button><img src="img/unsplash.png" alt="">Unsplash</button>
+      <button><img src="img/canva.png" alt="">Canva Pro</button>
+      <button><img src="img/pngtree.png" alt="">Png tree</button>
+      <button><img src="img/vecteezy.png" alt="">Vecteezy</button>
+    </div> -->
+
+    <div class="logout">
+      <div class="container-more">
+        <a href="#">Reportar erro</a>
+        <a href="#"
+          ><span id="logout"
+            ><img src="img/logout.png" alt="" srcset="" />Sair</span
+          ></a
+        >
+      </div>
+    </div>
+  </body>
+</html>

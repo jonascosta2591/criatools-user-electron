@@ -1,0 +1,59 @@
+{
+  "name": "criatools",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "Criatools",
+    "productName": "Criatools",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "img/Icone.ico",
+      "target": "nsis"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "jonascosta0299@gmail.com",
+      "repo": "https://github.com/jonascosta2591/criatools-user-electron.git"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Criatools"
+    },
+    "mac": {
+      "icon": "img/Icone.ico"
+    },
+    "linux": {
+      "icon": "img/Icone.ico"
+    }
+  },
+  "keywords": [],
+  "author": "jonas",
+  "license": "ISC",
+  "description": "project",
+  "devDependencies": {
+    "electron": "^31.1.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.1.2",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-updater": "^6.3.9",
+    "puppeteer": "^22.13.0",
+    "puppeteer-core": "^22.13.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "python-shell": "^5.0.0"
+  }
+}
